@@ -1,0 +1,24 @@
+{
+    "name": "userwebdevelop/yii2-rbac",
+    "description": "RBAC для Yii2",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "userwebdevelop\\yii2Rbac\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.4",
+        "yiisoft/yii2": "~2.0.52"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    },
+    "extra": {
+        "yii\\web\\Application": "backend-config.php"
+    }
+}
