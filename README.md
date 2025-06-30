@@ -33,6 +33,7 @@ use \userwebdevelop\yii2Rbac\traits\ModuleMiddleware;
 ```php
 \userwebdevelop\yii2Rbac\widgets\RBACSidebar::widget([
     // urls
+    ['label' => 'Роли', 'icon' => 'users', 'url' => ['/role']], // Также нужно добавить ссылку на роли
 ]);
 ```
 
