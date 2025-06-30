@@ -8,7 +8,6 @@ use userwebdevelop\yii2Rbac\models\Role;
 use userwebdevelop\yii2Rbac\models\search\RoleSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * RoleController implements the CRUD actions for Role model.

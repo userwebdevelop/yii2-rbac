@@ -17,8 +17,5 @@
         "allow-plugins": {
             "yiisoft/yii2-composer": true
         }
-    },
-    "extra": {
-        "yii\\web\\Application": "backend-config.php"
     }
 }
