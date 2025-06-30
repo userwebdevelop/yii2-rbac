@@ -1,6 +1,7 @@
 <?php
 namespace userwebdevelop\yii2Rbac\models;
 use Yii;
+use common\models\User;
 
 /**
  * This is the model class for table "{{%user_roles}}".
