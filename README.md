@@ -29,7 +29,7 @@ composer require userwebdevelop/yii2-rbac
 use \userwebdevelop\yii2Rbac\traits\ModuleMiddleware;
 ```
 
-5. Вывод сайдбара обернуть в метод из пакета:
+5. Вывод сайдбара в файле `backend/views/layouts/left.php` обернуть в метод из пакета:
 ```php
 \userwebdevelop\yii2Rbac\widgets\RBACSidebar::widget([
     // urls
