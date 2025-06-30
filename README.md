@@ -20,7 +20,7 @@ composer require userwebdevelop/yii2-rbac
 Добавить в файл `console/config/main.php` следующий фрагмент:
 ```php
 'controllerMap' => [
-    'rbac-yii2' => 'userwebdevelop\yii2Rbac\commands\RbacYii2Commands',
+    'yii2-rbac' => 'userwebdevelop\yii2Rbac\commands\RbacYii2Commands',
 ],
 ```
 
