@@ -44,6 +44,7 @@ $checkedArr = $model->id == 1 ? ['checked' => true] : [];
     <?php endif; ?>
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Вернуться к списку', ['index'], ['class' => 'btn btn-default']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 
