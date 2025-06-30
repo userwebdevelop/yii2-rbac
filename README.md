@@ -55,3 +55,16 @@ use \userwebdevelop\yii2Rbac\traits\ModuleMiddleware;
     ]
 ```
 По необходимости добавлять и убирать методы
+
+9. 
+В `backend/modules/admin/user/_form.php` добавить следующий код:
+```php
+<?= $form->field($model, 'roles')->widget(Select2::classname(), [
+        'data' => $model->getRolesLabels(),
+        'options' => ['placeholder' => '', 'multiple' => true],
+        'hideSearch' => false,
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]); ?>
+```

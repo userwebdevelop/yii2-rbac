@@ -2,17 +2,17 @@
 
 namespace userwebdevelop\yii2Rbac\controllers;
 
+use common\controllers\AuthController;
 use userwebdevelop\yii2Rbac\models\Permission;
 use Yii;
 use userwebdevelop\yii2Rbac\models\Role;
 use userwebdevelop\yii2Rbac\models\search\RoleSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 /**
  * RoleController implements the CRUD actions for Role model.
  */
-class RoleController extends Controller
+class RoleController extends AuthController
 {
     /**
      * Lists all Role models.

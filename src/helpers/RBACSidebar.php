@@ -16,7 +16,7 @@ class RBACSidebar
         $user_permissions = array_unique(RolesPermission::find()->where(['id_role' => $user_roles_id])->select('id_permission')->column());
         $permissions = Permission::find()->where(['id' => $user_permissions])->andWhere(['action' => 'actionIndex'])->select("controller")->column();
         foreach ($items as $key => $item) {
-            $className = "app\modules\admin\controllers\\" . str_replace(" ", "", ucwords(str_replace("-"," ", end(explode("/", $item['url'][0])))) . "Controller");
+            $className = "\app\modules\admin\controllers\\" . str_replace(" ", "", ucwords(str_replace("-"," ", end(explode("/", $item['url'][0])))) . "Controller");
             if (!in_array($className, $permissions)) unset($items[$key]);
         }
         return $items;
