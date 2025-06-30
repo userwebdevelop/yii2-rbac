@@ -57,7 +57,7 @@ use \userwebdevelop\yii2Rbac\traits\ModuleMiddleware;
 По необходимости добавлять и убирать методы
 
 9. 
-В `backend/modules/admin/user/_form.php` добавить следующий код:
+В `backend/modules/admin/user/_form.php` и в `backend/modules/admin/user/update.php` добавить следующий код:
 ```php
 <?= $form->field($model, 'roles')->widget(Select2::classname(), [
         'data' => $model->getRolesLabels(),
@@ -67,4 +67,10 @@ use \userwebdevelop\yii2Rbac\traits\ModuleMiddleware;
             'allowClear' => true
         ],
     ]); ?>
+```
+
+10. 
+В `backend\models\EditUserForm.php` и в `common\models\User.php` подключить трейт:
+```php
+use \userwebdevelop\yii2Rbac\traits\UserRolesSave;
 ```
