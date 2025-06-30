@@ -14,7 +14,7 @@ $checkedArr = $model->id == 1 ? ['checked' => true] : [];
 
     <?php $form = ActiveForm::begin(); ?>
     <?= $form->field($model, 'name')->textInput(['maxlength' => true, 'required' => true]) ?>
-    <?php if (isset($model->id)): ?>
+    <?php if (!empty($model->allPermissions)): ?>
         <div class="d-flex justify-content-end">
             <button type="button" class="btn btn-sm btn-outline-primary select-all">Выбрать все</button>
             <button type="button" class="btn btn-sm btn-outline-danger deselect-all">Убрать все</button>
