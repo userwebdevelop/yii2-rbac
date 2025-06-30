@@ -112,15 +112,14 @@ class RoleController extends Controller
     public function actionUpdateRoles()
     {
         $existingData = Permission::find()->asArray()->all();
-        $lastSlashPos = strrpos(self::class, '\\');
-        $namespace = substr(self::class, 0, $lastSlashPos) . "\\";
+        $namespace = "\app\modules\admin\controllers\\";
         $class_files = array_filter(scandir(Yii::getAlias('@backend/modules/admin/controllers', 1)), function ($item) {
             return strpos($item, ".php");
         });
-        $class_files[] = "RoleController.php";
         $class_names = array_values(array_map(function ($item) use ($namespace) {
             return $namespace . str_replace(".php", "", $item);
         }, $class_files));
+        $class_names[] = self::class;
         $dataToInsert = [];
         foreach ($class_names as $class) {
             $class_actions = array_filter(get_class_methods($class), function ($item) {
@@ -138,7 +137,6 @@ class RoleController extends Controller
             $key = $row['controller'] . '::' . $row['action'];
             $existingMap[$key] = $row['id'];
         }
-
         $toBeInserted = [];
         foreach ($dataToInsert as $item) {
             $key = $item['controller'] . '::' . $item['action'];
@@ -148,7 +146,6 @@ class RoleController extends Controller
                 unset($existingMap[$key]);
             }
         }
-
         $idsToDelete = array_values($existingMap);
         if (!empty($idsToDelete)) {
             Yii::$app->db->createCommand()
@@ -161,7 +158,7 @@ class RoleController extends Controller
                 ->execute();
         }
         Yii::$app->session->setFlash('success', 'Пермишены успешно обновлены.');
-        return $this->redirect(['@vendor/userwebdevelop/yii2-rbac/src/views/role/index']);
+        return $this->actionIndex();
     }
     public function getAllPermissions()
     {
