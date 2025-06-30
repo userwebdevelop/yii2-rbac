@@ -2,7 +2,7 @@
 namespace userwebdevelop\yii2Rbac\models;
 
 use Yii;
-
+use common\models\User;
 /**
  * This is the model class for table "{{%roles}}".
  *
@@ -81,13 +81,7 @@ class Role extends \yii\db\ActiveRecord
     }
     public static function getPermissionLabel($label)
     {
-        $labels = [
-            'actionIndex' => 'Просмотр всех элементов',
-            'actionView' => 'Просмотр одного элемента',
-            'actionCreate' => 'Создание',
-            'actionUpdate' => 'Редактирование',
-            'actionDelete' => 'Удаление',
-        ];
+        $labels = \Yii::$app->params['PERMISSION_LABELS'] ?? [];
         return $labels[$label] ?? $label;
     }
     public function afterFind()

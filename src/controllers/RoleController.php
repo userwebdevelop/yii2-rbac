@@ -52,7 +52,7 @@ class RoleController extends Controller
         $model = new Role();
         $model->allPermissions = $this->getAllPermissions();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('@vendor/userwebdevelop/yii2-rbac/src/views/role/create', [
@@ -72,7 +72,7 @@ class RoleController extends Controller
         $model = $this->findModel($id);
         $model->allPermissions = $this->getAllPermissions();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('@vendor/userwebdevelop/yii2-rbac/src/views/role/update', [
@@ -91,7 +91,7 @@ class RoleController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['@vendor/userwebdevelop/yii2-rbac/src/views/role/index']);
+        return $this->redirect(['index']);
     }
 
     /**
@@ -158,7 +158,7 @@ class RoleController extends Controller
                 ->execute();
         }
         Yii::$app->session->setFlash('success', 'Пермишены успешно обновлены.');
-        return $this->actionIndex();
+        return $this->redirect(['index']);
     }
     public function getAllPermissions()
     {

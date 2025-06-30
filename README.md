@@ -43,3 +43,15 @@ use \userwebdevelop\yii2Rbac\traits\ModuleMiddleware;
 
 7. 
 Для добавления админа используется команда `php yii yii2-rbac/admin <логин, id или email админа>`
+
+8. 
+Для перевода пермишенов доабвить в `backend/config/params.php` следующий элемент:
+```php
+    'PERMISSION_LABELS' => [
+        'actionIndex' => 'Просмотр всех',
+        'actionView' => 'Просмотр одного',
+        'actionCreate' => 'Создание',
+        'actionUpdate' => 'Редактирование'
+    ]
+```
+По необходимости добавлять и убирать методы
