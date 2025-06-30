@@ -2,7 +2,7 @@
 
 namespace userwebdevelop\yii2Rbac\commands;
 
-use userwebdevelop\yii2Rbac\models\User;
+use common\models\User;
 use userwebdevelop\yii2Rbac\models\UserRole;
 use yii\console\Controller;
 use yii\helpers\Console;

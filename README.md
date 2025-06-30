@@ -42,4 +42,4 @@ use \userwebdevelop\yii2Rbac\traits\ModuleMiddleware;
 `php yii yii2-rbac/migrate`
 
 7. 
-Для добавления админа используется команда `php yii yii2-rbac <логин, id или email админа>`
+Для добавления админа используется команда `php yii yii2-rbac/admin <логин, id или email админа>`
