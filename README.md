@@ -26,7 +26,7 @@ composer require userwebdevelop/yii2-rbac
 
 4. В файле `backend/modules/admin/Module.php` подключить трейт:
 ```php
-use userwebdevelop\yii2Rbac\traits\ModuleMiddleware;
+use \userwebdevelop\yii2Rbac\traits\ModuleMiddleware;
 ```
 
 5. Вывод сайдбара обернуть в метод из пакета:
